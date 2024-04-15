@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
+import { FaEye, FaEdit, FaTrashAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const LanguageView = () => {
     const [languages, setLanguages] = useState([]);
@@ -44,13 +46,19 @@ const LanguageView = () => {
                             <td>{language.language}</td>
                             <td>{language.country}</td>
                             <td className='mx-2'>
-                                <button className='btn btn-info'>View</button>
+                            <Link to={`/language-profile/${language.id}`} className='btn btn-info'>
+                                    <FaEye />
+                                </Link>
                             </td>
                             <td className='mx-2'>
-                            <button className='btn btn-warning'>Edit</button>
+                                <Link to={`/edit-language/${language.id}`} className='btn btn-warning'>
+                                    <FaEdit />
+                                </Link>
                             </td>
                             <td className='mx-2'>
-                            <button className='btn btn-danger'>Delete</button>
+                                <button className='btn btn-danger'>
+                                    <FaTrashAlt />
+                                </button>
                             </td>
                         </tr>
                     ))}

@@ -19,7 +19,7 @@ function App() {
         ></Route>
         <Route
         exact 
-        path='/view-students'
+        path='/view-languages'
         element={<LanguageView />}
         ></Route>
       </Routes>

@@ -26,14 +26,14 @@ const NavBar = () => {
 							<Link
 								className="nav-link active"
 								aria-current="page"
-								to={"/view-students"}>
+								to={"/view-languages"}>
 								View All Languages
 							</Link>
 						</li>
 						<li className="nav-item">
 							<Link
 								className="nav-link"
-								to={"/add-students"}>
+								to={"/add-languages"}>
 								Add Languages
 							</Link>
 						</li>
