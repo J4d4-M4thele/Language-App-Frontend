@@ -24,6 +24,11 @@ const LanguageView = () => {
         }
     }
 
+    const handleDelete = async (id) => {
+        await axios.delete(`http://localhost:9192/languages/delete/${id}`);
+        loadLanguages();
+    }
+
     return (
         <section>
             <table className='table table-bordered table-hover'>
@@ -56,7 +61,10 @@ const LanguageView = () => {
                                 </Link>
                             </td>
                             <td className='mx-2'>
-                                <button className='btn btn-danger'>
+                                <button 
+                                className='btn btn-danger'
+                                onClick={() => handleDelete(language.id)}
+                                >
                                     <FaTrashAlt />
                                 </button>
                             </td>
