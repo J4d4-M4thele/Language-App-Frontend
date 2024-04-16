@@ -56,7 +56,7 @@ const LanguageView = () => {
                                 </Link>
                             </td>
                             <td className='mx-2'>
-                                <Link to={`/edit-language/${language.id}`} className='btn btn-warning'>
+                                <Link to={`/edit-languages/${language.id}`} className='btn btn-warning'>
                                     <FaEdit />
                                 </Link>
                             </td>
