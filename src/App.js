@@ -7,6 +7,7 @@ import NavBar from './components/common/NavBar';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import AddLanguage from './components/language/AddLanguage';
 import EditLanguage from './components/language/EditLanguage';
+import LanguageProfile from './components/language/LanguageProfile';
 
 function App() {
   return (
@@ -33,6 +34,11 @@ function App() {
         exact 
         path='/edit-languages/:id'
         element={<EditLanguage />}
+        ></Route>
+        <Route
+        exact 
+        path='/language-profile/:id'
+        element={<LanguageProfile />}
         ></Route>
       </Routes>
      </Router>
