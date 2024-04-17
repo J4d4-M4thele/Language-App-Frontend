@@ -51,7 +51,7 @@ const LanguageProfile = () => {
 								<div className="row">
 									<div className="col-sm-3">
 										<h5 className="mb-0">
-											Full Name
+											Name
 										</h5>
 									</div>
 
