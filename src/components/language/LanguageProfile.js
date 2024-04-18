@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const LanguageProfile = () => {
-	const { id } = useParams();
+	const { code } = useParams();
 
 	const [languages, setLanguages] = useState({
         fullName: '',
         language: '',
         country: '',
+		code: '',
         countryFlagUri: ''
     });
 
@@ -17,7 +18,7 @@ const LanguageProfile = () => {
     }, []);
 
     const loadLanguages = async () => {
-        const result = await axios.get(`http://localhost:9192/languages/language/${id}`);
+        const result = await axios.get(`http://localhost:9192/languages/language/${code}`);
         setLanguages(result.data);
     }
 
@@ -89,6 +90,21 @@ const LanguageProfile = () => {
 									<div className="col-sm-9">
 										<p className="text-muted mb-0">
 											{languages.country}
+										</p>
+									</div>
+								</div>
+								<hr />
+
+								<div className="row">
+									<div className="col-sm-3">
+										<h5 className="mb-0">
+											Code
+										</h5>
+									</div>
+
+									<div className="col-sm-9">
+										<p className="text-muted mb-0">
+											{languages.code}
 										</p>
 									</div>
 								</div>

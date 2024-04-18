@@ -5,23 +5,23 @@ import axios from "axios";
 const EditLanguage = () => {
     let navigate = useNavigate();
 
-    const {id} = useParams;
+    let {code} = useParams;
 
-    const [languages, setLanguages] = useState({
+    let [languages, setLanguages] = useState({
         fullName: '',
         language: '',
         country: '',
         countryFlagUri: ''
     });
 
-    const { fullName, language, country, countryFlagUri } = languages;
+    let { fullName, language, country, countryFlagUri } = languages;
 
     useEffect(() => {
         loadLanguages();
     }, []);
 
     const loadLanguages = async () => {
-        const result = await axios.get(`http://localhost:9192/languages/language/${id}`);
+        const result = await axios.get(`http://localhost:9192/languages/language/${code}`);
         setLanguages(result.data);
     }
 
@@ -31,7 +31,7 @@ const EditLanguage = () => {
 
     const updateLanguage = async (e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:9192/languages/update/${id}`, languages);
+        await axios.put(`http://localhost:9192/languages/update/${code}`, languages);
         navigate("/view-languages");
     };
 

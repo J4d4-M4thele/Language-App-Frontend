@@ -38,6 +38,7 @@ const LanguageView = () => {
                         <th>Name</th>
                         <th>Language</th>
                         <th>Country</th>
+                        <th>Code</th>
                         <th colSpan='3'>Actions</th>
                     </tr>
                 </thead>
@@ -50,13 +51,14 @@ const LanguageView = () => {
                             <td>{language.fullName}</td>
                             <td>{language.language}</td>
                             <td>{language.country}</td>
+                            <td>{language.code}</td>
                             <td className='mx-2'>
-                            <Link to={`/language-profile/${language.id}`} className='btn btn-info'>
+                            <Link to={`/language-profile/${language.code}`} className='btn btn-info'>
                                     <FaEye />
                                 </Link>
                             </td>
                             <td className='mx-2'>
-                                <Link to={`/edit-languages/${language.id}`} className='btn btn-warning'>
+                                <Link to={`/edit-languages/${language.code}`} className='btn btn-warning'>
                                     <FaEdit />
                                 </Link>
                             </td>

@@ -9,10 +9,11 @@ const AddLanguage = () => {
         fullName: '',
         language: '',
         country: '',
+        code: '',
         countryFlagUri: ''
     });
 
-    const { fullName, language, country, countryFlagUri } = languages;
+    const { fullName, language, country, code, countryFlagUri } = languages;
 
     const handleInputChange = (e) => {
         setLanguages({ ...languages, [e.target.name]: e.target.value });
@@ -75,6 +76,23 @@ const AddLanguage = () => {
                         id='country'
                         required
                         value={country}
+                        onChange={(e) => handleInputChange(e)}
+                    />
+                </div>
+
+                <div className='input-group mb-5'>
+                    <label
+                        className='input-group-text'
+                        htmlFor='code'>
+                        Code
+                    </label>
+                    <input
+                        className='form-control col-sm-6'
+                        type='text'
+                        name='code'
+                        id='code'
+                        required
+                        value={code}
                         onChange={(e) => handleInputChange(e)}
                     />
                 </div>
